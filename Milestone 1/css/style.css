@@ -25,7 +25,7 @@ main{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  min-width: 920px;
+  min-width: 1024px;
   min-height: 90vh;
   background-color: white;
 }
@@ -121,6 +121,46 @@ main{
   flex-grow: 1;
   overflow: auto;
   background-image: url(../../img/mine.jpg);
+  padding: 40px 60px 0 60px;
+}
+
+.message{
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.sent{
+  justify-content: flex-end;
+}
+
+.received{
+  justify-content: flex-start;
+}
+
+.messageTextContainer{
+  min-width: 30%;
+  max-width: 75%;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.background-sent{
+  background-color: rgb(214, 252, 178);
+}
+
+.message_text{
+  font-size: 20px;
+  padding: 10px;
+  padding-bottom: 0;
+  margin: 0;
+}
+
+.message_timeStamp{
+  font-size: 10px;
+  text-align: end;
+  margin: 0;
+  color: rgb(170, 171, 170);
 }
 
 .containerNewMessage{
