@@ -26,7 +26,7 @@ main{
   left: 50%;
   transform: translate(-50%, -50%);
   min-width: 1024px;
-  min-height: 90vh;
+  height: 90vh;
   background-color: white;
 }
 
@@ -150,7 +150,7 @@ main{
 }
 
 .message_text{
-  font-size: 20px;
+  font-size: 18px;
   padding: 10px;
   padding-bottom: 0;
   margin: 0;
@@ -170,8 +170,20 @@ main{
   background-color: rgb(242, 238, 234);
 }
 
+.containerNewMessage_icon{
+  color: rgb(170, 171, 170);
+  font-size: 25px;
+  padding: 10px 20px;
+  flex-shrink: 0;
+}
 
-
+.containerNewMessage_input{
+  flex-grow: 1;
+  border: 0;
+  padding: 15px;
+  font-size: 18px;
+  border-radius: 6px;
+}
 
                                   /* utilities */
 
