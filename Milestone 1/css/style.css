@@ -33,33 +33,82 @@ main{
 /* Styles containerLeft */
 
 .containerLeft{
-  width: 300px;
+  width: 400px;
   flex-shrink: 0;
-  background-color: red;
+  background-color: rgb(250, 250, 250);
 }
 
 .navLeft{
-  height: 50px;
+  height: 80px;
   flex-shrink: 0;
   background-color: rgb(234, 234, 234);
 }
 
 .notifications{
-  height: 60px;
+  height: 80px;
   flex-shrink: 0;
   background-color: lightskyblue;
 }
 
-.containerSearch{
-  height: 30px;
+.notifications_iconContainer{
+  width: 50px;
+  height: 50px;
   flex-shrink: 0;
-  background-color: rgb(250, 250, 250);
+  background-color: white;
+  text-align: center;
+  padding: 5px;
 }
 
-.containerChats{
+.notifications_iconContainer_iconLink, .notifications_iconContainer_iconLink:hover{
+  color: lightskyblue;
+  font-size: 25px;
+}
+
+.containerSearch{
+  height: 60px;
+  flex-shrink: 0;
+  background-color: rgb(250, 250, 250);
+  padding: 10px;
+}
+
+.containerSearch_iconLink, .containerSearch_iconLink:hover{
+  background-color: white;
+  color: rgb(170, 171, 170);
+  padding: 10px;
+  padding-left: 20px;
+  flex-shrink: 0;
+}
+
+.containerSearch_input{
+  flex-grow: 1;
+  border: 0;
+  padding: 10px;
+}
+
+.containerContacts{
   flex-grow: 1;
   overflow: auto;
+  margin-right: 10px;
   background-color: white;
+}
+
+.contact{
+  height: 80px;
+  position: relative;
+}
+.contact_infoContainer{
+  color: rgb(170, 171, 170);
+  padding: 8px;
+}
+.contact_infoContainer_name{
+  color: black;
+}
+
+.contact_timestamp{
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  font-size: 14px;
 }
 
 
@@ -68,11 +117,10 @@ main{
 
 .containerRight{
   flex-grow: 1;
-  overflow: hidden;
 }
 
 .navRight{
-  height: 50px;
+  height: 80px;
   flex-shrink: 0;
   background-color: rgb(234, 234, 234);
   border-left: 1px solid lightgray;
@@ -85,8 +133,24 @@ main{
 }
 
 .containerNewMessage{
-  height: 50px;
+  height: 80px;
   flex-shrink: 0;
   border-left: 1px solid lightgray;
   background-color: rgb(242, 238, 234);
+}
+
+/* utilities */
+
+.nav-btn{
+  border: 0;
+  margin: 8px;
+  font-size: 1.5rem;
+  background-color: rgb(234, 234, 234);
+  color: rgb(170, 171, 170);
+}
+
+.avatarContainer{
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
 }
