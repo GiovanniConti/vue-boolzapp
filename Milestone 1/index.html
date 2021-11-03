@@ -20,21 +20,21 @@
     <div class="containerApp d-flex flex-row">
       <!-- section Left -->
       <section class="containerLeft d-flex flex-column">
-
-        <div class="navLeft d-flex align-items-center">
-          <div class="navLeft_imgContainer avatarContainer">
+        <!-- Left nav -->
+        <div class="nav d-flex align-items-center">
+          <div class="avatarContainer">
             <img src="../img/avatar_io.jpg" alt="avatar_io" class="w-100 rounded-circle p-2">
           </div>
-          <div class="navLeft_userNameContainer py-2 flex-grow-1">
+          <div class="nav_userNameContainer py-2 flex-grow-1">
             <h3 class="fs-6 m-0">Nome Utente</h3>
           </div>
-          <div class="navLeft_btnContainer flex-shrink-0 p-2 pe-3">
+          <div class="nav_btnContainer flex-shrink-0 p-2 pe-3">
             <button class="nav-btn statusBtn"><i class="fas fa-circle-notch"></i></button>
             <button class="nav-btn newchatBtn"><i class="fas fa-comment-alt"></i></button>
             <button class="nav-btn menuBtn"><i class="fas fa-ellipsis-v"></i></button>
           </div>
         </div>
-
+        <!-- notifications -->
         <div class="notifications d-flex align-items-center">
           <div class="notifications_iconContainer rounded-circle m-2">
             <a href="#" class="notifications_iconContainer_iconLink"><i class="fas fa-bell-slash"></i></a>
@@ -44,35 +44,54 @@
             <a href="#" class="link-secondary">attiva notifiche desktop</a>
           </div>
         </div>
-
+        <!-- search -->
         <div class="containerSearch d-flex align-items-center">
           <a href="#" class="containerSearch_iconLink"><i class="fas fa-search"></i></a>
           <input type="text" placeholder="Cerca o inizia una nuova chat" class="containerSearch_input">
         </div>
-
+        <!-- contacts -->
         <div class="containerContacts d-flex flex-column">
-
           <!-- contact layout template -->
           <div class="contact d-flex" v-for="contact, i in contacts">
-
+            <!-- display avatar -->
             <div class="contact_imgContainer avatarContainer">
               <img :src="contact.avatar" alt="avatar_1" class="w-100 rounded-circle p-2">
             </div>
-
+            <!-- display contact info (name, last message and relative timestamp) -->
             <div class="contact_infoContainer flex-grow-1">
               <h3 class="fs-5 contact_infoContainer_name">{{contact.name}}</h3>
               <h6>Tutto fatto!...</h6>
               <h6 class="contact_timestamp">10/01/2020 16:15:22</h6>
             </div>
-
           </div>
-
         </div>
       </section>
+
       <!-- section right -->
       <section class="containerRight d-flex flex-column">
-        <div class="navRight"></div>
-        <div class="containerMessages"></div>
+        <!-- Rigth nav -->
+        <div class="nav d-flex align-items-center">
+          <div class="avatarContainer">
+            <img src="../img/avatar_1.jpg" alt="avatar_1" class="w-100 rounded-circle p-2">
+          </div>
+          <div class="nav_userNameContainer py-2 flex-grow-1">
+            <h3 class="fs-6 m-0">Michele</h3>
+            <h6 class="lastSeen">Ultimo accesso...</h6>
+          </div>
+          <div class="nav_btnContainer flex-shrink-0 p-2 pe-3">
+            <button class="nav-btn statusBtn"><i class="fas fa-search"></i></i></button>
+            <button class="nav-btn newchatBtn"><i class="fas fa-paperclip"></i></i></button>
+            <button class="nav-btn menuBtn"><i class="fas fa-ellipsis-v"></i></button>
+          </div>
+        </div>
+        
+        <!-- Chat Box -->
+        <div class="containerMessages">
+          <div class="message sent"></div>
+          <div class="message received"></div>
+        </div>
+        
+        <!-- New Message container -->
         <div class="containerNewMessage"></div>
       </section>
     </div>
