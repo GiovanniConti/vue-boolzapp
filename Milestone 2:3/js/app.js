@@ -126,6 +126,19 @@ window.addEventListener("DOMContentLoaded", () =>{
         });
 
         this.newMessageText = "";
+      
+        setTimeout(() => {
+          this.autoReplay()
+        }, 1000);
+      },
+
+      autoReplay(){
+        console.log("autoReplay called");
+        this.activeChat.messages.push({
+          date: '10/01/2020 15:50:00',
+          text: "Ok",
+          status: 'received'
+        });
       },
       
     },

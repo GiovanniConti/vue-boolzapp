@@ -194,32 +194,16 @@ main{
 
 .containerNewMessage_btn{
   display: none;
-  transition: fadeout 1s ease-out;
-  opacity: 0;
-}
-
-@keyframes fadeout {
-  from { opacity: 1; }
-  to   { opacity: 0; }
 }
 
 .containerNewMessage_input:focus + .containerNewMessage_btn{
   display: inline-block;
   font-size: 25px;
   color: rgb(170, 171, 170);
-  transition: fadein 1s ease-out;
-  opacity: 1;
-}
-
-@keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
 }
 
 .containerNewMessage_input:focus + .containerNewMessage_icon{
   display: none;
-  transition: fadeout 1s ease-out;
-  opacity: 0;
 }
 
                                   /* utilities */
