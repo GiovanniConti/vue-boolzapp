@@ -84,12 +84,22 @@ main{
   overflow: auto;
   margin-right: 10px;
   background-color: white;
+  cursor: pointer;
 }
 
 .contact{
   height: 80px;
   position: relative;
 }
+
+.contact:hover{
+  background-color: rgb(247, 244, 244);
+}
+
+.clicked{
+  background-color: rgb(225, 225, 225);
+}
+
 .contact_infoContainer{
   color: rgb(170, 171, 170);
   padding: 8px;
@@ -112,6 +122,8 @@ main{
 
 .lastSeen{
   color: rgb(170, 171, 170);
+  margin: 0;
+  margin-top: 5px;
 }
 
 .containerMessages{

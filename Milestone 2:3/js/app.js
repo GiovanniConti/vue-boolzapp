@@ -8,7 +8,7 @@ window.addEventListener("DOMContentLoaded", () =>{
         {
           name: 'Michele',
           avatar: '_1',
-          visible: true,
+          clicked: false,
           messages: [
             {
               date: '10/01/2020 15:30:55',
@@ -30,7 +30,7 @@ window.addEventListener("DOMContentLoaded", () =>{
         {
           name: 'Fabio',
           avatar: '_2',
-          visible: true,
+          clicked: false,
           messages: [
             {
               date: '20/03/2020 16:30:00',
@@ -52,7 +52,7 @@ window.addEventListener("DOMContentLoaded", () =>{
         {
           name: 'Samuele',
           avatar: '_3',
-          visible: true,
+          clicked: false,
           messages: [
             {
               date: '28/03/2020 10:10:40',
@@ -74,7 +74,7 @@ window.addEventListener("DOMContentLoaded", () =>{
         {
           name: 'Luisa',
           avatar: '_4',
-          visible: true,
+          clicked: false,
           messages: [
             {
               date: '10/01/2020 15:30:55',
@@ -90,7 +90,6 @@ window.addEventListener("DOMContentLoaded", () =>{
         },
       ],
       activeChat: {},
-      clicked: false,
     },
     methods: {
       createImgPath(avatar){
@@ -105,10 +104,18 @@ window.addEventListener("DOMContentLoaded", () =>{
         return message.slice(0,20);
       },
 
-      onChatClick(clickedChat){
-        this.clicked = true;
+      onChatClick(clickedChat, index){
         this.activeChat = clickedChat;
+        this.activeChat.index = index;
       },
+
+      lastSeen(messagesContainer){
+        return messagesContainer[messagesContainer.length-1].date;
+      },
+    },
+
+    mounted(){
+      this.activeChat = this.contacts[0];
     },
   });
 });

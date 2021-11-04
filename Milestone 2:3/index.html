@@ -26,7 +26,7 @@
             <img src="../img/avatar_io.jpg" alt="avatar_io" class="w-100 rounded-circle p-2">
           </div>
           <div class="nav_userNameContainer py-2 flex-grow-1">
-            <h3 class="fs-6 m-0">Nome Utente</h3>
+            <h3 class="fs-6 m-0 fw-bold">Nome Utente</h3>
           </div>
           <div class="nav_btnContainer flex-shrink-0 p-2 pe-3">
             <button class="nav-btn statusBtn"><i class="fas fa-circle-notch"></i></button>
@@ -55,7 +55,7 @@
         <!-- contacts -->
         <div class="containerContacts d-flex flex-column">
           <!-- contact layout template -->
-          <div class="contact d-flex" v-for="contact, i in contacts" @click="onChatClick(contact)">
+          <div class="contact d-flex" v-for="contact, i in contacts" @click="onChatClick(contact, i)" :class="(i == activeChat.index) ? 'clicked' : '' ">
             <!-- display avatar -->
             <div class="contact_imgContainer avatarContainer">
               <img :src="createImgPath(contact.avatar)" alt="contact.avatar" class="w-100 rounded-circle p-2">
@@ -77,9 +77,9 @@
           <div class="avatarContainer">
             <img src="../img/avatar_1.jpg" alt="avatar" class="w-100 rounded-circle p-2">
           </div>
-          <div class="nav_userNameContainer py-2 flex-grow-1">
-            <h3 class="fs-6 m-0">Michele</h3>
-            <h6 class="lastSeen">Ultimo accesso...</h6>
+          <div class="nav_userNameContainer flex-grow-1">
+            <h3 class="fs-6 m-0 fw-bold">{{activeChat.name}}</h3>
+            <h6 class="lastSeen">Ultimo accesso {{lastSeen(activeChat.messages)}}</h6>
           </div>
           <div class="nav_btnContainer flex-shrink-0 p-2 pe-3">
             <button class="nav-btn statusBtn"><i class="fas fa-search"></i></i></button>
@@ -110,10 +110,10 @@
           </div> 
           -->
 
-          <div class="message" v-for="message in contacts.messages" :class="(message.status === 'sent') ? 'sent' : '' ">    <!-- v-for= "message in activeChat.messages"   :class="(message.status === "sent") ? sent : ''"-->
-            <div class="messageTextContainer" :class="(message.status === 'sent') ? 'sent' : '' ">    <!-- :class="(message.status === "sent") ? background-sent : ''" -->
-              <h2 class="message_text">{{message.text}}</h2>    <!-- message.text-->
-              <h6 class="message_timeStamp">{{message.date}}</h6>    <!-- message.date-->
+          <div class="message" v-for="message in activeChat.messages" :class="(message.status === 'sent') ? 'sent' : '' ">
+            <div class="messageTextContainer" :class="(message.status === 'sent') ? 'background-sent' : '' ">
+              <h2 class="message_text">{{message.text}}</h2>
+              <h6 class="message_timeStamp">{{message.date}}</h6>
             </div>
           </div>
         </div>
