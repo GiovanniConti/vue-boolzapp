@@ -90,6 +90,7 @@ window.addEventListener("DOMContentLoaded", () =>{
         },
       ],
       activeChat: {},
+      newMessageText: "",
     },
     methods: {
       createImgPath(avatar){
@@ -112,6 +113,21 @@ window.addEventListener("DOMContentLoaded", () =>{
       lastSeen(messagesContainer){
         return messagesContainer[messagesContainer.length-1].date;
       },
+
+      onAddClick(){
+        if(this.newMessageText === ""){
+          return;
+        }
+
+        this.activeChat.messages.push({
+          date: '10/01/2020 15:50:00',
+          text: this.newMessageText,
+          status: 'sent'
+        });
+
+        this.newMessageText = "";
+      },
+      
     },
 
     mounted(){

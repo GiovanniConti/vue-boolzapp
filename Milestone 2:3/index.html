@@ -90,26 +90,6 @@
         
         <!-- Chat Box -->
         <div class="containerMessages">
-          
-                  <!-- template message sent -->
-          <!-- 
-          <div class="message sent"">    
-            <div class="messageTextContainer background-sent" :class="(message.status === 'sent') ? 'sent' : '' ">
-              <h2 class="message_text">{{message.text}}</h2>
-              <h6 class="message_timeStamp">{{message.date}}</h6>
-            </div>
-          </div>
-           -->
-                  <!-- template message received -->
-          <!--           
-          <div class="message">
-            <div class="messageTextContainer">
-              <h2 class="message_text">Bene, grazie. Tu?</h2>
-              <h6 class="message_timeStamp">10/01/2020 15:40:14</h6>
-            </div>
-          </div> 
-          -->
-
           <div class="message" v-for="message in activeChat.messages" :class="(message.status === 'sent') ? 'sent' : '' ">
             <div class="messageTextContainer" :class="(message.status === 'sent') ? 'background-sent' : '' ">
               <h2 class="message_text">{{message.text}}</h2>
@@ -121,8 +101,9 @@
         <!-- New Message container -->
         <div class="containerNewMessage d-flex align-items-center">
           <a href="#" class="containerNewMessage_icon"><i class="far fa-smile"></i></i></a>
-          <input type="text" placeholder="Cerca o inizia una nuova chat" class="containerNewMessage_input">
-          <a href="#" class="containerNewMessage_icon"><i class="fas fa-microphone"></i></i></a>
+          <input type="text" placeholder="Cerca o inizia una nuova chat" class="containerNewMessage_input" v-model="newMessageText" v-on:keyup.enter="onAddClick">
+          <button type="button" class="btn containerNewMessage_btn" @click="onAddClick"><i class="fas fa-paper-plane"></i></button>
+          <a href="#" class="containerNewMessage_icon"><i class="fas fa-microphone"></i></a>
         </div>
       </section>
     </div>
