@@ -149,6 +149,7 @@ main{
   padding: 5px;
   border-radius: 10px;
   background-color: white;
+  position: relative;
 }
 
 .background-sent{
@@ -168,6 +169,24 @@ main{
   text-align: end;
   margin: 0;
   color: rgb(170, 171, 170);
+}
+
+.message_popup{
+  position: absolute;
+  top: -5px;
+  right: -5px;
+}
+
+.message_btn{
+  color: rgb(170, 171, 170);
+}
+
+.dropdown-menu{
+  background-color: rgba(230, 2230, 230, 0.6);
+}
+
+.dropdown-item.active, .dropdown-item:active{
+  background: rgb(170, 171, 170);
 }
 
 .containerNewMessage{
@@ -222,6 +241,6 @@ main{
 
 /* class to remove shadow from focused btns */
 
-.containerSearch_btn:focus, .containerNewMessage_btn:focus{
+.btn:focus{
   box-shadow: none;
 }

@@ -97,6 +97,15 @@
             <div class="messageTextContainer" :class="(message.status === 'sent') ? 'background-sent' : '' ">
               <h2 class="message_text">{{message.text}}</h2>
               <h6 class="message_timeStamp">{{message.date}}</h6>
+              <div class="dropdown message_popup">
+                <button class="btn message_btn" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fas fa-chevron-down"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                  <li><a class="dropdown-item active" href="#">Delete message</a></li>
+                  <li><a class="dropdown-item" href="#">Message info</a></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
