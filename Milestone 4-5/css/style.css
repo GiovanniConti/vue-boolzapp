@@ -73,10 +73,6 @@ main{
   flex-shrink: 0;
 }
 
-.containerSearch_btn:focus{
-  box-shadow: none;
-}
-
 .containerSearch_input{
   flex-grow: 1;
   border: 0;
@@ -181,7 +177,7 @@ main{
   background-color: rgb(242, 238, 234);
 }
 
-.containerNewMessage_icon{
+.containerNewMessage_icon, .containerNewMessage_btn{
   color: rgb(170, 171, 170);
   font-size: 25px;
   padding: 10px 20px;
@@ -196,19 +192,11 @@ main{
   border-radius: 6px;
 }
 
-.containerNewMessage_btn{
-  display: none;
-}
-
-.containerNewMessage_input:focus + .containerNewMessage_btn{
+/* .containerNewMessage_btn{
   display: inline-block;
   font-size: 25px;
   color: rgb(170, 171, 170);
-}
-
-.containerNewMessage_input:focus + .containerNewMessage_icon{
-  display: none;
-}
+} */
 
                                   /* utilities */
 
@@ -230,4 +218,10 @@ main{
   width: 80px;
   height: 80px;
   flex-shrink: 0;
+}
+
+/* class to remove shadow from focused btns */
+
+.containerSearch_btn:focus, .containerNewMessage_btn:focus{
+  box-shadow: none;
 }

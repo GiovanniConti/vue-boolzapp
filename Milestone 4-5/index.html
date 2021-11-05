@@ -105,8 +105,8 @@
         <div class="containerNewMessage d-flex align-items-center">
           <a href="#" class="containerNewMessage_icon"><i class="far fa-smile"></i></i></a>
           <input type="text" placeholder="Cerca o inizia una nuova chat" class="containerNewMessage_input" v-model="newMessageText" @keyup.enter="onAddClick">
-          <button type="button" class="btn containerNewMessage_btn" @click="onAddClick"><i class="fas fa-paper-plane"></i></button>
-          <a href="#" class="containerNewMessage_icon"><i class="fas fa-microphone"></i></a>
+          <button type="button" class="btn containerNewMessage_btn" :class="(newMessageText === '') ? 'd-none' : ''" @click="onAddClick"><i class="fas fa-paper-plane"></i></button>
+          <a href="#" class="containerNewMessage_icon" :class="(newMessageText === '') ? '' : 'd-none'"><i class="fas fa-microphone"></i></a>
         </div>
       </section>
     </div>
