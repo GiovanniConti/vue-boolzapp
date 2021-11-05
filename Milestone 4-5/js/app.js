@@ -111,6 +111,8 @@ window.addEventListener("DOMContentLoaded", () =>{
       onChatClick(clickedChat, index){
         this.activeChat = clickedChat;
         this.activeChat.index = index;
+
+        this.scrollToBottom();
       },
 
       lastSeen(messagesContainer){
@@ -129,6 +131,7 @@ window.addEventListener("DOMContentLoaded", () =>{
         setTimeout(() => {
           this.addMessage('ok', 'received')
         }, 1000);
+
       },
 
       // function to add a new text message to the chat
@@ -138,6 +141,7 @@ window.addEventListener("DOMContentLoaded", () =>{
           text: messageText,
           status: sender,
         });
+        this.scrollToBottom();
       },
 
       searchFilter(){
@@ -153,13 +157,20 @@ window.addEventListener("DOMContentLoaded", () =>{
         return this.filteredContacts = this.contacts.filter((contact) => {
           return contact.name.toLowerCase().includes(this.filterText.toLowerCase().trim());
         });
-      }
+      },
       
+      scrollToBottom(){
+        setTimeout(() => {
+          this.$refs.containerMessages.scrollTop = this.$refs.containerMessages.scrollHeight;
+        }, 0);
+      },
+
     },
 
     created(){
       this.activeChat = this.contacts[0];
       this.searchFilter();
+      // this.scrollToBottom();
     },
 
     mounted(){

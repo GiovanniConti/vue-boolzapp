@@ -92,7 +92,7 @@
         </div>
         
         <!-- Chat Box -->
-        <div class="containerMessages">
+        <div class="containerMessages" ref="containerMessages">
           <div class="message" v-for="message in activeChat.messages" :class="(message.status === 'sent') ? 'sent' : '' ">
             <div class="messageTextContainer" :class="(message.status === 'sent') ? 'background-sent' : '' ">
               <h2 class="message_text">{{message.text}}</h2>
