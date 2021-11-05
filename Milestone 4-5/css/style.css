@@ -240,7 +240,6 @@ main{
 }
 
 /* class to remove shadow from focused btns */
-
 .btn:focus{
   box-shadow: none;
 }

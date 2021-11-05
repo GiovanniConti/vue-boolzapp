@@ -123,6 +123,7 @@ window.addEventListener("DOMContentLoaded", () =>{
       newMessageText: "",
       filterText: "",
       filteredContacts: [],
+      noMessages: false,
     },
     methods: {
       createImgPath(avatar){
@@ -193,6 +194,15 @@ window.addEventListener("DOMContentLoaded", () =>{
         setTimeout(() => {
           this.$refs.containerMessages.scrollTop = this.$refs.containerMessages.scrollHeight;
         }, 0);
+      },
+
+      deleteMessageClick(index){
+        if(this.activeChat.messages.length === 1){
+          this.noMessages = true;
+          return;
+        }
+        this.noMessages = false;
+        this.activeChat.messages.splice(index,1);
       },
 
     },
