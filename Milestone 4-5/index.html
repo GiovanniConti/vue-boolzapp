@@ -53,7 +53,7 @@
         <!-- search -->
         <div class="containerSearch d-flex align-items-center">
           <button class="btn containerSearch_btn" @click="searchFilter"><i class="fas fa-search"></i></button>
-          <input type="text" placeholder="Cerca o inizia una nuova chat" class="containerSearch_input" v-model="filterText" @keyup.enter="searchFilter">
+          <input type="text" placeholder="Cerca o inizia una nuova chat" class="containerSearch_input" v-model="filterText" @keyup="searchFilter">
         </div>
 
         <!-- contacts -->
