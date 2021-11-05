@@ -98,8 +98,8 @@ window.addEventListener("DOMContentLoaded", () =>{
       },
 
       getLastMessage(messages){
-        if(messages.length == 0){
-          return;
+        if(messages.length === 0){
+          return "";
         }
         const message = messages[messages.length - 1].text;
         return message.slice(0,20);
@@ -119,25 +119,19 @@ window.addEventListener("DOMContentLoaded", () =>{
           return;
         }
 
-        this.activeChat.messages.push({
-          date: '10/01/2020 15:50:00',
-          text: this.newMessageText,
-          status: 'sent'
-        });
-
+        this.addMessage(this.newMessageText, "sent")
         this.newMessageText = "";
       
         setTimeout(() => {
-          this.autoReplay()
+          this.addMessage('ok', 'received')
         }, 1000);
       },
 
-      autoReplay(){
-        console.log("autoReplay called");
+      addMessage(messageText, sender){
         this.activeChat.messages.push({
-          date: '10/01/2020 15:50:00',
-          text: "Ok",
-          status: 'received'
+          date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+          text: messageText,
+          status: sender,
         });
       },
       
