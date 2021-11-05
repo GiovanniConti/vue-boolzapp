@@ -75,7 +75,7 @@
         <!-- Rigth nav -->
         <div class="nav d-flex align-items-center">
           <div class="avatarContainer">
-            <img src="../img/avatar_1.jpg" alt="avatar" class="w-100 rounded-circle p-2">
+            <img :src="createImgPath(activeChat.avatar)" alt="avatar" class="w-100 rounded-circle p-2">
           </div>
           <div class="nav_userNameContainer flex-grow-1">
             <h3 class="fs-6 m-0 fw-bold">{{activeChat.name}}</h3>

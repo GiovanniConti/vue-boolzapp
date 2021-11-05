@@ -115,7 +115,7 @@ window.addEventListener("DOMContentLoaded", () =>{
       },
 
       onAddClick(){
-        if(this.newMessageText === ""){
+        if(this.newMessageText.trim() === ""){
           return;
         }
 
@@ -143,7 +143,7 @@ window.addEventListener("DOMContentLoaded", () =>{
       
     },
 
-    mounted(){
+    created(){
       this.activeChat = this.contacts[0];
     },
   });
